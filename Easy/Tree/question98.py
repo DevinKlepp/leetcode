@@ -4,6 +4,7 @@
 #         self.val = x
 #         self.left = None
 #         self.right = None
+# https://leetcode.com/problems/validate-binary-search-tree/solution/
 
 class Solution:
     def isValidBST(self, root):
