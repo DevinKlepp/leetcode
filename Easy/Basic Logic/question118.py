@@ -12,3 +12,14 @@ class Solution:
                 returned[i][j + 1] = returned[i - 1][j] + returned[i - 1][j + 1]
                 j += 1
         return returned
+
+class SolutionBetter:
+    def generate(self, numRows: int) -> List[List[int]]:
+        tri = []
+        for i in range(0, numRows):
+            tri.append([1])
+            for j in range(0, i - 1):
+                tri[i].append(tri[i - 1][j] + tri[i - 1][j + 1])
+            if(i != 0):
+                tri[i].append(1)
+        return tri
