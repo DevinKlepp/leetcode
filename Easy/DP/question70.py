@@ -24,3 +24,30 @@ class Solution:
                     total += nums[i - j]
             nums[i] = total
         return nums[n]
+    
+    class Solution:
+    def rec(self, n, ht): # Memoized
+        if(n == 1):
+            return 1
+        elif(n == 2):
+            return 2
+        elif(n in ht):
+            return ht[n]
+
+        ht[n] = self.rec(n - 1, ht) + self.rec(n - 2, ht)
+        return ht[n]
+    
+    def climbStairs(self, n: int) -> int:
+        ht = {}
+        return self.rec(n, ht)
+    
+    def climbStairs(self, n: int) -> int: # DP Way
+        if(n < 4):
+            return n
+        ht = {}
+        ht[1] = 1
+        ht[2] = 2
+        for i in range(3, n + 1):
+            ht[i] = ht[i - 1] + ht[i - 2]
+        return ht[n]
+        
