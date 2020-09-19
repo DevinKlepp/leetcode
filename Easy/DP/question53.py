@@ -1,7 +1,10 @@
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        for i in range(1, len(nums)):
-            if nums[i-1] > 0:
-                nums[i] += nums[i-1]
-        return max(nums)
-        # Can do dynamic approach by divide and conquer
+        tempmax = -2**31
+        ret = -2**31
+        for i in range(0, len(nums)):
+            tempmax = max(tempmax + nums[i], nums[i])
+            if(tempmax > ret):
+                ret = tempmax
+        return ret
+            
