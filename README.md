@@ -8,7 +8,7 @@ Leetcode question practice to grasp a better understanding of algorithms and dat
 - `dict.get(number, num)` returns the value pertaining to the key if it exists, else it returns the given num
 
 ## Sliding Window Template
-```
+```c++
 int findSubstring(string s){
         vector<int> map(128,0);
         int counter; // check whether the substring is valid
