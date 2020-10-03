@@ -1,9 +1,14 @@
-# leetcode submissions repo
-Leetcode question practice to grasp a better understanding of algorithms
- and datastructures
+# Leetcode Submissions repo
+Leetcode question practice to grasp a better understanding of algorithms and datastructures
  
-Sliding Window Template
+## Useful Techniques
 
+##  Python tips
+- `Counter(string)` returns a dictionary which holds number of occurrences of characters
+- `dict.get(number, num)` returns the value pertaining to the key if it exists, else it returns the given num
+
+## Sliding Window Template
+```
 int findSubstring(string s){
         vector<int> map(128,0);
         int counter; // check whether the substring is valid
@@ -29,3 +34,4 @@ int findSubstring(string s){
         }
         return d;
   }
+```
